@@ -1,8 +1,7 @@
 // @ts-expect-error This is an experimental API
 // eslint-disable-next-line no-restricted-imports
-import { unstable_Activity as Activity } from "react";
+import { act, createRef, unstable_Activity as Activity } from "react";
 import { Root, createRoot } from "react-dom/client";
-import { act } from "react-dom/test-utils";
 import {
   ImperativePanelGroupHandle,
   ImperativePanelHandle,
@@ -17,7 +16,6 @@ import {
   mockPanelGroupOffsetWidthAndHeight,
   verifyAttribute,
 } from "./utils/test-utils";
-import { createRef } from "./vendor/react";
 
 describe("PanelGroup", () => {
   let expectedWarnings: string[] = [];

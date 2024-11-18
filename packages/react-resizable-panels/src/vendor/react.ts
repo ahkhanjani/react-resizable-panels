@@ -24,7 +24,6 @@ import type {
 const {
   createElement,
   createContext,
-  createRef,
   forwardRef,
   useCallback,
   useContext,
@@ -48,7 +47,6 @@ const useLayoutEffect_do_not_use_directly = useLayoutEffect;
 export {
   createElement,
   createContext,
-  createRef,
   forwardRef,
   useCallback,
   useContext,

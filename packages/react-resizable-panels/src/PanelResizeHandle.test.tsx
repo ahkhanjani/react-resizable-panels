@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-restricted-imports
+import { act } from "react";
 import { Root, createRoot } from "react-dom/client";
-import { act } from "react-dom/test-utils";
 import {
   Panel,
   PanelGroup,

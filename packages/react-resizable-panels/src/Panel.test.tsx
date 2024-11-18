@@ -1,5 +1,6 @@
+// eslint-disable-next-line no-restricted-imports
+import { act, createRef } from "react";
 import { Root, createRoot } from "react-dom/client";
-import { act } from "react-dom/test-utils";
 import { ImperativePanelHandle, Panel, PanelGroup, PanelResizeHandle } from ".";
 import { assert } from "./utils/assert";
 import { getPanelElement } from "./utils/dom/getPanelElement";
@@ -8,7 +9,6 @@ import {
   verifyAttribute,
   verifyExpandedPanelGroupLayout,
 } from "./utils/test-utils";
-import { createRef } from "./vendor/react";
 
 describe("PanelGroup", () => {
   let expectedWarnings: string[] = [];
@@ -1032,11 +1032,8 @@ describe("PanelGroup", () => {
       const { TextEncoder } = await import("util");
       global.TextEncoder = TextEncoder;
 
-      const { renderToStaticMarkup } = (await import(
-        // @ts-expect-error No type definitions for server.browser
-        "react-dom/server.browser"
-      )) as typeof import("react-dom/server");
-      const { act } = await import("react-dom/test-utils");
+      const { renderToStaticMarkup } = await import("react-dom/server");
+      const { act } = await import("react");
       const { Panel } = await import("./Panel");
       const { PanelGroup } = await import("./PanelGroup");
       const { PanelResizeHandle } = await import("./PanelResizeHandle");
